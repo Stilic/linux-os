@@ -8,7 +8,7 @@ function extract_source {
      tar -xf $name --strip-components=1 -C $loc
      rm $name
 }
-mkdir sources initramfs
+mkdir sources
 cd sources
 # TODO: get versions using args
 extract_source https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.37.tar.xz
