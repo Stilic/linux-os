@@ -1,8 +1,9 @@
 #!/bin/sh
+mount -t tmpfs -o size=64k,mode=0755 tmpfs /dev
+mkdir /dev/pts
+mount -t devpts devpts /dev/pts
 mount -t proc proc /proc
 mount -t sysfs sysfs /sys
-mount -t tmpfs -o size=64k,mode=0755 tmpfs /dev
-mount -t devpts devpts /dev/pts
 echo /sbin/mdev > /proc/sys/kernel/hotplug
 mdev -s
 ip link set lo up
