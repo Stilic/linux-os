@@ -3,4 +3,5 @@ cores=$(nproc)
 cd sources/linux
 make -j$cores
 cd ../busybox
-make -j$cores install
+make -j$cores
+make install
