@@ -3,9 +3,9 @@
 ## How to build
 
 ```sh
-# Setup sources
+# Setup the sources
 ./setup.sh
-# Compile the kernel and BusyBox
+# Compile everything
 ./compile.sh
 # Build the initramfs
 ./build_cpio.sh
