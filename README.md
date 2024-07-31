@@ -7,13 +7,15 @@
 ./setup.sh
 # Compile everything
 ./compile.sh
-# Build the initramfs
+# Build the ramdisk
 ./build_cpio.sh
+# Build the disk
+./build_disk.sh
 ```
 
 ## How to run
 
 ```sh
-# Run the current built initramfs
+# Boot the system from ramdisk
 ./run.sh
 ```
