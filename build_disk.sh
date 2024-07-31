@@ -1,7 +1,7 @@
 #!/bin/sh
 if [ "$EUID" -ne 0 ]
 then
-    echo "Please run this script as root."
+    echo Please run this script as root.
     exit
 fi
 mkfs.ext4 -F disk
