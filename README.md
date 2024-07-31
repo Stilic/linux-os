@@ -10,7 +10,7 @@
 # Build the ramdisk
 ./build_cpio.sh
 # Build the disk
-./build_disk.sh
+sudo ./build_disk.sh
 ```
 
 ## How to run
