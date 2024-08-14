@@ -8,7 +8,7 @@
 # Compile everything
 ./compile.sh
 # Build the ramdisk
-./build_cpio.sh
+./build_ramdisk.sh
 # Build the disk
 sudo ./build_disk.sh
 ```
