@@ -6,7 +6,6 @@ function extract_source {
     loc=${name%-*}
     mkdir $loc
     tar -xf $name --strip-components=1 -C $loc
-    cp ../config/$loc $loc/.config
     rm $name
 }
 truncate -s 1GB disk
