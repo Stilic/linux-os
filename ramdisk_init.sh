@@ -1,8 +1,14 @@
 #!/bin/sh
 mount -t devtmpfs none /dev
-mount -t proc proc /proc
-mount -t sysfs sysfs /sys
+mount -t proc none /proc
+mount -t tmpfs none /tmp -o mode=1777
+mount -t sysfs none /sys
+mkdir -p /dev/pts
+mount -t devpts none /dev/pts
 mount $(sed -e 's/^.*root=//' -e 's/ .*$//' /proc/cmdline) /mnt
-umount /dev /proc /sys
+mount --move /dev /mnt/dev
+mount --move /sys /mnt/sys
+mount --move /proc /mnt/proc
+mount --move /tmp /mnt/tmp
 export LD_LIBRARY_PATH=/lib:/usr/lib
 exec switch_root /mnt /init

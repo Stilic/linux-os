@@ -1,7 +1,4 @@
 #!/bin/sh
-mount -t devtmpfs none /dev
-mount -t proc proc /proc
-mount -t sysfs sysfs /sys
 ip link set lo up
 ifup eth0
 exec setsid cttyhack sh
