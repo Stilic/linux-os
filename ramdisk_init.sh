@@ -10,5 +10,4 @@ mount --move /dev /mnt/dev
 mount --move /sys /mnt/sys
 mount --move /proc /mnt/proc
 mount --move /tmp /mnt/tmp
-export LD_LIBRARY_PATH=/lib:/usr/lib
 exec switch_root /mnt /init

@@ -6,9 +6,9 @@ make -j$cores
 cd ../glibc
 mkdir build
 cd build
-../configure --prefix=$(realpath install) CFLAGS="-O3"
+../configure CFLAGS="-O3" --prefix= --without-gd --without-selinux --disable-werror
 make -j$cores
-make install
+make install DESTDIR=$(realpath install)
 cd ../../busybox
 cp ../../config/busybox .config
 make -j$cores
