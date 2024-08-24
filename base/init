@@ -1,4 +1,5 @@
 #!/bin/sh
+sysctl -qp
 ip link set lo up
 ifup eth0
 exec setsid cttyhack sh

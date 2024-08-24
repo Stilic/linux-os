@@ -16,4 +16,4 @@ ln -s lib usr/lib
 ln -s lib64 usr/lib64
 ln -s sbin usr/sbin
 ln -s bin usr/bin
-umount ../mnt
+umount -fl ../mnt
