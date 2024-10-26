@@ -10,4 +10,4 @@ mount --move /dev /mnt/dev
 mount --move /sys /mnt/sys
 mount --move /proc /mnt/proc
 mount --move /tmp /mnt/tmp
-exec switch_root /mnt /init
+exec switch_root /mnt /sbin/init
