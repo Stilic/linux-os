@@ -7,7 +7,7 @@ fi
 mkfs.ext4 -F disk
 mount disk mnt
 cd mnt
-mkdir dev proc sys mnt etc lib lib64 sbin bin tmp usr
+mkdir -p dev proc sys mnt etc lib lib64 sbin bin tmp usr var/log/init
 cp -a ../sources/busybox/_install/* .
 cp -ra ../sources/glibc/build/install/{sbin,bin,lib} .
 mv lib/ld-linux* lib64

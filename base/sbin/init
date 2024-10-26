@@ -1,5 +1,6 @@
 #!/bin/sh
-sysctl -qp
-ip link set lo up
-ifup eth0
+for file in /etc/init.d/boot.d/*
+do
+  /sbin/service $file start &
+done
 exec setsid cttyhack sh
