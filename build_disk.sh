@@ -14,4 +14,4 @@ cp -ra ../base/* .
 ln -s lib usr/lib
 ln -s sbin usr/sbin
 ln -s bin usr/bin
-umount -fl ../mnt
+umount -l ../mnt
