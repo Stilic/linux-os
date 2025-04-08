@@ -3,13 +3,11 @@ cores=$(nproc)
 cd sources/linux
 cp ../../config/linux .config
 make -j$cores
-cd ../glibc
-mkdir build
-cd build
-../configure CFLAGS="-O3" --prefix= --without-gd --without-selinux --disable-werror
+cd ../musl
+./configure CFLAGS="-O3" --prefix=
 make -j$cores
 make install DESTDIR=$(realpath install)
-cd ../../busybox
+cd ../busybox
 cp ../../config/busybox .config
 make -j$cores
 make CONFIG_PREFIX=_install-static install

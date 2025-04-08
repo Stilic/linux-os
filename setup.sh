@@ -1,17 +1,14 @@
 #!/bin/sh
 function extract_source {
-    local loc="$1"
-    local name=$(basename $loc)
-    curl -o $name $loc
-    loc=${name%-*}
-    mkdir $loc
-    tar -xf $name --strip-components=1 -C $loc
-    rm $name
+    archive="_$1"
+    curl -o "$archive" "$2"
+    mkdir "$1"
+    tar -xf $archive --strip-components=1 -C "$1"
+    rm $archive
 }
 truncate -s 1GB disk
 mkdir mnt sources
 cd sources
-# TODO: get versions using args
-extract_source https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.58.tar.xz
-extract_source https://ftp.gnu.org/gnu/glibc/glibc-2.40.tar.xz
-extract_source https://busybox.net/downloads/busybox-1.36.1.tar.bz2
+# extract_source linux https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.58.tar.xz
+extract_source musl https://git.musl-libc.org/cgit/musl/snapshot/musl-1.2.5.tar.gz
+# extract_source busybox https://busybox.net/downloads/busybox-1.36.1.tar.bz2
