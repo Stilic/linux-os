@@ -5,13 +5,12 @@ then
     exit
 fi
 mkfs.ext4 -F disk
-mount disk mnt
-cd mnt
-mkdir -p dev proc sys mnt etc lib sbin bin tmp usr var/log/init
-cp -a ../sources/busybox/_install/* .
-cp -ra ../sources/musl/install/* .
-cp -ra ../base/* .
-ln -s lib usr/lib
-ln -s sbin usr/sbin
-ln -s bin usr/bin
-umount -l ../mnt
+mount disk /mnt
+mkdir -p /mnt/dev /mnt/proc /mnt/sys /mnt/mnt /mnt/etc /mnt/lib /mnt/sbin /mnt/bin /mnt/tmp /mnt/usr /mnt/var/log/init
+cp -a sources/busybox/_install/* /mnt
+cp -ra sources/musl/install/* /mnt
+cp -ra base/* /mnt
+ln -s /lib /mnt/usr/lib
+ln -s /sbin /mnt/usr/sbin
+ln -s /bin /mnt/usr/bin
+umount /mnt

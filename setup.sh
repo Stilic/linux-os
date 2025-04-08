@@ -7,7 +7,7 @@ function extract_source {
     rm $archive
 }
 truncate -s 1GB disk
-mkdir mnt sources
+mkdir sources
 cd sources
 # extract_source linux https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.58.tar.xz
 extract_source musl https://git.musl-libc.org/cgit/musl/snapshot/musl-1.2.5.tar.gz
